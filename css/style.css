@@ -1,0 +1,35 @@
+/* Created by: ZoiaB
+* Created on: Apr 2023
+* This CSS file defines the style for index.html
+* ICS2O-Unit4-04-PHP-Museum
+*/
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 80%;
+  margin: 5% 10%;
+  background-color: #606bbe;
+}
+
+h1 {
+  color: white;
+  background-color: #aa995a;
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+iframe {
+  padding: 30px;
+  background-color: #aa995a;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+}
