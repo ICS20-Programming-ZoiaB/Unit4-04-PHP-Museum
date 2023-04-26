@@ -36,7 +36,7 @@
    <!-- Form for user input -->
    <form action="./results.php" method="post" target="result">
      <label for="age">How old are you?</label>
-     <input type="number" step="1" min="1" max="122" id="user-age" placeholder="Your age..."><br><br>
+     <input type="number" step="1" max="122" name="user-age" placeholder="Your age..."><br><br>
      <label for="day">What day of the week will you visit the museum?</label>
      <select id="day" name="day">
        <option value="Day of week">Day of week</option>

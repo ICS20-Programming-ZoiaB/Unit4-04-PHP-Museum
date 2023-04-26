@@ -1,47 +1,49 @@
 <?php
 
-  //initializing variables
-  $cost = "Please make a selection above.";
-
-  //declaring and defining variables
-  $userAge = intval($_POST["user-age"]);
-  $day = $_POST["day"];
-
-  //setting constants for age thresholds
+  // Setting constants: children are a maximum of 5, elderly people are a minimum of 95 and students are between 12 & 21
   define("CHILD_FREE", 5);
   define("ELDERLY_FREE", 95);
   define("STUDENT_MINIMUM", 12);
   define("STUDENT_MAXIMUM", 21);
 
-//if: if user enters a negative integer for their age
-if ($userAge < 0) {
-   $cost = "Please enter a valid age.";
- }
+  //  Define cost that will be displayed as result later on
+  $cost = "";
 
-   //else if: if user does not enter age tell them to please enter age
-else if (empty($userAge)) {
+  // Get the user's age and the day of the week from input form
+  $userAge = intval($_POST["user-age"]);
+  $day = $_POST["day"];
+
+  // If age is less than 0, display that they must enter a valid age
+  if ($userAge < 0) {
+    $cost = "Please enter a valid age.";
+  }
+
+  // If the user does not enter their age, display that they must enter their age
+  else if (empty($userAge)) {
     $cost = "Please enter age.";
-}
+  }
 
-  //else if: if user does not enter a day of the week
- else if ($day == "Day of week") {
-   $cost = "Please enter a day of the week.";
- }
+  // Otherwise, if the user does not enter the day of the week, display that they must do so
+  else if ($day == "Day of week") {
+    $cost = "Please enter a day of the week.";
+  }
 
-  //using compound if statements to determine cost
- else if (($userAge < CHILD_FREE) || ($userAge > ELDERLY_FREE)) {
-   $cost = "You can visit the museum for free!";
- }
+  // Otherwise, if the user is under 5 OR over 95 years old, display that they get in for free
+  else if (($userAge < CHILD_FREE) || ($userAge > ELDERLY_FREE)) {
+    $cost = "You can visit the museum for free!";
+  }
 
- //elseif: if age is between 12 and 21 OR the day is Tuesday or Thursday.
- else if ((($userAge >= STUDENT_MINIMUM) && ($userAge <= STUDENT_MAXIMUM)) || (($day == "Thursday") || ($day == "Tuesday"))) {
-   $cost = "You get a student discount.";
- }
+  // Otherwise, if the user is between 12 and 21 years old, OR if it is Tuesday or Thursday, display that they get a discount
+  else if ((($userAge >= STUDENT_MINIMUM) && ($userAge <= STUDENT_MAXIMUM)) || (($day == "Thursday") || ($day == "Tuesday"))) {
+    $cost = "You get a student discount.";
+  }
 
- else {
-   $cost = "You are not eligible for a discount and must pay the full price.";
- }
+  // Else, display that they do not get a discount
+  else {
+    $cost = "You are not eligible for a discount and must pay the full price.";
+  }
 
-  //displaying the appropriate cost to the screen
+  // Display the results to the user in the "results" div
   echo "$cost";
+
 ?>
