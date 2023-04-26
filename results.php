@@ -1,4 +1,5 @@
 <?php
+
   //initializing variables
   $cost = "Please make a selection above.";
 
@@ -18,9 +19,9 @@ if ($userAge < 0) {
  }
 
    //else if: if user does not enter age tell them to please enter age
- else if (empty()($userAge)) {
-   $cost = "Please enter age.";
- }
+else if (empty($userAge)) {
+    $cost = "Please enter age.";
+}
 
   //else if: if user does not enter a day of the week
  else if ($day == "Day of week") {
