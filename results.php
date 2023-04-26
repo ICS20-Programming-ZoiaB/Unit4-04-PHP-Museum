@@ -1,6 +1,6 @@
 <?php
 
-  // Setting constants: children are a maximum of 5, elderly people are a minimum of 95 and students are between 12 & 21
+// Setting constants: children are a maximum of 5, elderly people are a minimum of 95 and students are between 12 & 21
   define("CHILD_FREE", 5);
   define("ELDERLY_FREE", 95);
   define("STUDENT_MINIMUM", 12);
@@ -14,9 +14,9 @@
   $day = $_POST["day"];
 
   // If age is less than 0, display that they must enter a valid age
-  if ($userAge < 0) {
+if ($userAge < 0) {
     $cost = "Please enter a valid age.";
-  }
+}
 
   // If the user does not enter their age, display that they must enter their age
   else if (empty($userAge)) {

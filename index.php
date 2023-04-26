@@ -29,9 +29,10 @@
    
    <!-- Header -->
    <center>
-   <h1>Museum Pass</h1>
-   <h3>Welcome to the museum!</h3>
-   <p>This web page will help you determine if you can get a discount for your museum price</p>
+   <?php
+    echo "<h1>Museum Pass</h1>";
+    echo "<h3>Welcome to the museum!</h3>";
+    echo "<p>This web page will help you determine if you can get a discount for your museum price</p>"; ?>
      
    <!-- Form for user input -->
    <form action="./results.php" method="post" target="result">
